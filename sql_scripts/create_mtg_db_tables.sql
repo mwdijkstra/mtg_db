@@ -71,7 +71,7 @@ CREATE TABLE cards
     card_power varchar(3),
     card_toughness varchar(3),
     card_loyalty smallint(2),
-    card_multiverse_id BIGINT(18),
+    card_multiverse_id bigint(18),
     card_imagename varchar(255),
     card_watermark varchar(50),
     card_timeshifted boolean,
@@ -155,7 +155,7 @@ CREATE TABLE card_colors
     CONSTRAINT fk_card_id_from_ccol
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id),
-	CONSTRAINT fk_color_code
+	CONSTRAINT fk_color_code_from_ccol
 		FOREIGN KEY (color_code)
         REFERENCES colors(color_code)
 );
@@ -166,7 +166,7 @@ CREATE TABLE card_color_identity
     CONSTRAINT fk_card_id_from_ccid
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id),
-	CONSTRAINT fk_color_code
+	CONSTRAINT fk_color_code_from_ccid
 		FOREIGN KEY (color_code)
         REFERENCES colors(color_code)
 );
@@ -183,7 +183,29 @@ CREATE TABLE boosters
     CONSTRAINT fk_set_code_from_boo
 		FOREIGN KEY (set_code)
         REFERENCES sets(set_code),
-	CONSTRAINT fk_rarity_code
+	CONSTRAINT fk_rarity_code_from_boo
 		FOREIGN KEY (rarity_code)
         REFERENCES booster_rarities(booster_rarity_code)
+);
+
+CREATE TABLE persons
+(	person_id int(10),
+	person_first_name varchar(255),
+    person_last_name varchar(255),
+    person_birthdate date,
+    CONSTRAINT person_id_pk PRIMARY KEY (person_id)
+);
+
+CREATE TABLE collections
+(	person_id int(10),
+	card_id varchar(40),
+    card_amount_wanted smallint(2),
+    card_amount_for_trade smallint(2),
+    card_amount_owned smallint(2),
+    CONSTRAINT fk_person_id_from_col
+		FOREIGN KEY (person_id)
+        REFERENCES persons(person_id),
+	CONSTRAINT fk_card_id_from_col
+		FOREIGN KEY (card_id)
+        REFERENCES cards(card_id)
 );

@@ -84,9 +84,6 @@ CREATE TABLE cards
     card_original_type varchar(50),
     card_promo_source varchar(50),
     CONSTRAINT card_id_pk PRIMARY KEY (card_id),
-    CONSTRAINT fk_rarity
-		FOREIGN KEY (card_rarity)
-        REFERENCES rarities(rarity),
 	CONSTRAINT fk_card_layout
 		FOREIGN KEY (card_layout)
         REFERENCES layouts(layout_id),
@@ -107,7 +104,7 @@ CREATE TABLE cards
 CREATE TABLE card_variations
 (	card_id varchar(40),
 	variation_multiverse_id bigint(18),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_cvar
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id)
 );
@@ -117,7 +114,7 @@ CREATE TABLE card_foreign_names
 	card_foreign_language varchar(20),
     card_foreign_name varchar(255),
     card_foreign_multiverse_id bigint(18),
-	CONSTRAINT fk_card_id
+	CONSTRAINT fk_card_id_from_cfna
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id)
 );
@@ -125,7 +122,7 @@ CREATE TABLE card_foreign_names
 CREATE TABLE card_supertypes
 (	card_id varchar(40),
 	card_supertype_name varchar(255),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_csup
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id)
 );
@@ -133,7 +130,7 @@ CREATE TABLE card_supertypes
 CREATE TABLE card_types
 (	card_id varchar(40),
 	card_type_name varchar(255),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_ctyp
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id)
 );
@@ -141,7 +138,7 @@ CREATE TABLE card_types
 CREATE TABLE card_subtypes
 (	card_id varchar(40),
 	card_subtype_name varchar(255),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_csub
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id)
 );
@@ -155,7 +152,7 @@ CREATE TABLE colors
 CREATE TABLE card_colors
 (	card_id varchar(40),
 	color_code char(1),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_ccol
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id),
 	CONSTRAINT fk_color_code
@@ -166,10 +163,27 @@ CREATE TABLE card_colors
 CREATE TABLE card_color_identity
 (	card_id varchar(40),
 	color_code char(1),
-    CONSTRAINT fk_card_id
+    CONSTRAINT fk_card_id_from_ccid
 		FOREIGN KEY (card_id)
         REFERENCES cards(card_id),
 	CONSTRAINT fk_color_code
 		FOREIGN KEY (color_code)
         REFERENCES colors(color_code)
+);
+
+CREATE TABLE booster_rarities
+(	booster_rarity_code char(2),
+	booster_rarity_name varchar(20),
+    CONSTRAINT booster_rarity_code_pk PRIMARY KEY (booster_rarity_code)
+);
+
+CREATE TABLE boosters
+(	set_code char(3),
+	rarity_code char(1),
+    CONSTRAINT fk_set_code_from_boo
+		FOREIGN KEY (set_code)
+        REFERENCES sets(set_code),
+	CONSTRAINT fk_rarity_code
+		FOREIGN KEY (rarity_code)
+        REFERENCES booster_rarities(booster_rarity_code)
 );

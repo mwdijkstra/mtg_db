@@ -45,6 +45,8 @@ CREATE TABLE sets
     set_release_date varchar(10),
     set_blockname varchar(255),
     set_is_online_only boolean,
+    set_mkm_name varchar(255),
+    set_mkm_id int(10),
 	CONSTRAINT set_code_pk PRIMARY KEY (set_code),
     CONSTRAINT fk_set_border_id
 		FOREIGN KEY (set_border_id)

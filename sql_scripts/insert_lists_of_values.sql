@@ -18,7 +18,24 @@ VALUES	(01, "white"),
         (03, "silver");
         
 INSERT INTO card_rarities (card_rarity_code, card_rarity_name)
-VALUES	()
+VALUES	("C", "common"),
+		("U", "uncommon"),
+        ("R", "rare"),
+        ("M", "mythic rare"),
+        ("S", "special"),
+        ("L", "land");
+        
+INSERT INTO layouts (layout_id, layout_name)
+VALUES	(01, "normal"),
+		(01, "split"),
+        (01, "flip"),
+        (01, "double-faced"),
+        (01, "token"),
+        (01, "plane"),
+        (01, "scheme"),
+        (01, "phenomenon"),
+        (01, "leveler"),
+        (01, "vanguard");
 
 INSERT INTO set_types (set_type_id, set_type_name)
 VALUES	(01, "core"),

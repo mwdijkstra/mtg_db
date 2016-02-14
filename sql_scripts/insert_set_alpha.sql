@@ -12,7 +12,9 @@ INSERT INTO sets (
     set_magiccards_info_code,
     set_release_date,
     set_blockname,
-    set_is_online_only
+    set_is_online_only,
+    set_mkm_name,
+    set_mkm_id
 ) VALUES (
 	"LEA",
     02,
@@ -23,5 +25,7 @@ INSERT INTO sets (
     "al",
     "1993-08-05",
     null,
-    false
+    false,
+    "Alpha",
+    1
 );

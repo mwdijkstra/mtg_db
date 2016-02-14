@@ -1,11 +1,6 @@
 USE mtg_db;
 
-INSERT INTO set_types (set_type_id, set_type_name)
-
-INSERT INTO borders (border_id, border_name)
-VALUES	(01, "white"),
-		(02, "black"),
-        (03, "silver");
+# It is necessary to insert the lists-of-values first
 
 INSERT INTO sets (
 	set_code,
@@ -21,5 +16,12 @@ INSERT INTO sets (
 ) VALUES (
 	"LEA",
     02,
-    
+    01,
+    "Limited Edition Alpha",
+    "1E",
+    null,
+    "al",
+    "1993-08-05",
+    null,
+    false
 );

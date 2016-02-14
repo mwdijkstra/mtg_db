@@ -54,6 +54,8 @@ CREATE TABLE sets
         REFERENCES set_types(set_type_id)
 );
 
+# We need mkm_name and mkm_id .. not in documentation but it is in the Alpha file
+
 CREATE TABLE cards
 (	card_id varchar(40),
 	card_layout smallint(2),

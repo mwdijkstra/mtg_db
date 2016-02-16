@@ -200,6 +200,41 @@ CREATE TABLE persons
     CONSTRAINT person_id_pk PRIMARY KEY (person_id)
 );
 
+CREATE TABLE address
+(	address_id int(10),
+	person_id int(10),
+    address_street_name varchar(255),
+    address_house_number int(5),
+    addres_house_number_addition varchar(5),
+    address_postal_code varchar(6),
+    address_city varchar(255),
+    address_country varchar(255),
+    CONSTRAINT address_id_pk PRIMARY KEY (address_id),
+    CONSTRAINT fk_person_id_address
+		FOREIGN KEY (person_id)
+        REFERENCES persons(person_id)
+);
+
+CREATE TABLE contactpoint_types
+(	contactpoint_type_id char(2),
+	contactpoint_type_name varchar(50),
+    CONSTRAINT contactpoint_type_id_pk PRIMARY KEY (contactpoint_type_id)
+);
+
+CREATE TABLE contactpoints
+(	contactpoint_id int(10),
+	contactpoint_type_code char(2),
+    person_id int(10),
+    contactpoint_value varchar(255),
+	CONSTRAINT contactpoint_id_pk PRIMARY KEY (contact_point_id),
+    CONSTRAINT fk_contactpoint_type_code_contactpoints
+		FOREIGN KEY (contactpoint_type_code)
+        REFERENCES contactpoint_types(contactpint_type_id),
+	CONSTRAINT fk_person_id_contactpoints
+		FOREIGN KEY (person_id)
+        REFERENCES persons(person_id)
+);
+
 CREATE TABLE collections
 (	person_id int(10),
 	card_id varchar(40),

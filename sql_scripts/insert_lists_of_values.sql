@@ -25,6 +25,20 @@ VALUES	("C", "common"),
         ("S", "special"),
         ("L", "land");
         
+INSERT INTO colors (color_code, color_name)
+VALUES	("W", "white"),
+		("U", "blue"),
+        ("B", "black"),
+        ("R", "red"),
+        ("G", "green"),
+        ("C", "colorless");
+        
+INSERT INTO contactpoint_types (contactpoint_type_code, contactpoint_type_name)
+VALUES	(01, "e-mail"),
+		(02, "facebook"),
+        (03, "twitter"),
+        (04, "instagram");
+        
 INSERT INTO layouts (layout_id, layout_name)
 VALUES	(01, "normal"),
 		(01, "split"),
@@ -53,4 +67,3 @@ VALUES	(01, "core"),
         (13, "promo"),
         (14, "vanguard"),
         (15, "masters");
-

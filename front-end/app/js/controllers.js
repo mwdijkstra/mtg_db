@@ -8,8 +8,10 @@ myAppControllers.controller('SetsCtrl', ['$scope', '$http',
     }
 ]);
 
-myAppControllers.controller('SetDetailCrtrl', ['$scope', '$http',
-    function ($scope, $routeParams) {
-        $scope.setcode = $routeParams.setcode;
+myAppControllers.controller('SetDetailCtrl', ['$scope', '$routeParams', '$http',
+    function ($scope, $routeParams, $http) {
+        $http.get('json/sets/' + $routeParams.setCode + '.json').success(function(data) {
+            $scope.set = data;
+        });
     }
 ]);

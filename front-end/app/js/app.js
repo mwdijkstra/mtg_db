@@ -10,7 +10,7 @@ myApp.config(['$routeProvider',
                 templateUrl: 'partials/sets.html',
                 controller: 'SetsCtrl'
             }).
-            when('/sets/:setcode', {
+            when('/sets/:setCode', {
                 templateUrl: 'partials/set-details.html',
                 controller: 'SetDetailCtrl'
             }).

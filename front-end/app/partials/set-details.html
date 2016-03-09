@@ -1,1 +1,34 @@
-TBD: detail view for <span>{{set.name}}</span>
+
+
+<div class="col-md-2">
+    <!--Sidebar content-->
+
+    Search: <input ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
+        <option value="name">Name</option>
+        <option value="rarity">Rarity</option>
+    </select>
+
+    <p>Return to main</p>
+
+</div>
+
+<div class="col-md-10">
+    <!--Body content-->
+
+    <h1>{{set.name}}</h1>
+
+    <table class="cards">
+        <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Rarity</th>
+        </tr>
+        <tr ng-repeat="card in set.cards | filter:query | orderBy:orderProp">
+            <td>{{card.name}}</td>
+            <td>{{card.colors}}</td>
+            <td>{{card.rarity}}</td>
+        </tr>
+    </table>
+</div>

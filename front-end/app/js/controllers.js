@@ -15,3 +15,12 @@ myAppControllers.controller('SetDetailCtrl', ['$scope', '$routeParams', '$http',
         });
     }
 ]);
+
+myAppControllers.controller('CardDetailCtrl', ['$scope', '$routeParams', '$http',
+    function ($scope, $routeParams, $http) {
+        $http.get('json/sets/' + $routeParams.setCode + '.json').success(function(data) {
+            $scope.set = data;
+            $scope.card = $routeParams.cardName;
+        });
+    }
+]);

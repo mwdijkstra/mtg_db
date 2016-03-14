@@ -1,0 +1,23 @@
+<div class="col-md-2">
+    <!--Sidebar content-->
+
+    Search: <input ng-model="query">
+    Sort by:
+    <select ng-model="orderProp">
+        <option value="name">Name</option>
+        <option value="rarity">Rarity</option>
+    </select>
+
+    <p><a href="/{{set.code}}">Return to main</a></p>
+
+</div>
+
+<div class="col-md-10">
+    <!--Body content-->
+
+    <h1>{{card}}</h1>
+
+    <p>Placeholder for Card Details</p>
+    <p>This does not work with current JSON files!</p>
+
+</div>

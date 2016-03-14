@@ -14,6 +14,10 @@ myApp.config(['$routeProvider',
                 templateUrl: 'partials/set-details.html',
                 controller: 'SetDetailCtrl'
             }).
+            when('/sets/:setCode/:cardName', {
+                templateUrl: 'partials/card-details.html',
+                controller: 'CardDetailCtrl'
+            }).
             otherwise({
                 redirectTo: '/sets'
         });

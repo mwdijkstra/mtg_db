@@ -1,5 +1,3 @@
-
-
 <div class="col-md-2">
     <!--Sidebar content-->
 
@@ -10,7 +8,7 @@
         <option value="rarity">Rarity</option>
     </select>
 
-    <p>Return to main</p>
+    <p><a href="#/sets">Return to main</a></p>
 
 </div>
 
@@ -26,7 +24,7 @@
             <th>Rarity</th>
         </tr>
         <tr ng-repeat="card in set.cards | filter:query | orderBy:orderProp">
-            <td>{{card.name}}</td>
+            <td><a href="#/sets/{{set.code}}/{{card.name}}">{{card.name}}</a></td>
             <td>{{card.colors}}</td>
             <td>{{card.rarity}}</td>
         </tr>

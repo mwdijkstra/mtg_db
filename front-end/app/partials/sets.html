@@ -1,7 +1,15 @@
-<div class="container-fluid">
+<!-- Jumbotron - this should be less wide on desktop -->
+
+<div class="jumbotron">
+    <h1>Jumbotron heading</h1>
+    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+</div>
+
     <div class="row">
+        <!--
         <div class="col-md-2">
-            <!--Sidebar content-->
+            <!--Sidebar content
 
             Search: <input ng-model="query">
             Sort by:
@@ -11,22 +19,66 @@
             </select>
 
         </div>
-        <div class="col-md-10">
-            <!--Body content-->
+        -->
+        <div class="container">
+            <div class="row"> <!-- ik weet niet wat dit doet?!? -->
+                <div class="col-md-4">
+                    <!--Body content-->
 
-            <table class="sets">
-                <tr>
-                    <th>Name</th>
-                    <th>Code</th>
-                    <th>Released</th>
-                </tr>
-                <tr ng-repeat="set in sets | filter:query | orderBy:orderProp">
-                    <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                    <td>{{set.code}}</td>
-                    <td>{{set.releaseDate}}</td>
-                </tr>
-            </table>
+                    <h2>First SetType</h2>
 
+                    <table class="sets">
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Released</th>
+                        </tr>
+                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                            <td>{{set.code}}</td>
+                            <td>{{set.releaseDate}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="col-md-4">
+                    <!--Body content-->
+
+                    <h2>Second SetType</h2>
+
+                    <table class="sets">
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Released</th>
+                        </tr>
+                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                            <td>{{set.code}}</td>
+                            <td>{{set.releaseDate}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="col-md-4">
+                    <!--Body content-->
+
+                    <h2>Third SetType</h2>
+
+                    <table class="sets">
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Released</th>
+                        </tr>
+                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                            <td>{{set.code}}</td>
+                            <td>{{set.releaseDate}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
         </div>
     </div>
-</div>

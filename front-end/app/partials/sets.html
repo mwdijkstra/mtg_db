@@ -1,9 +1,11 @@
 <!-- Jumbotron - this should be less wide on desktop -->
 
 <div class="jumbotron">
-    <h1>Jumbotron heading</h1>
-    <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+    <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    </div>
 </div>
 
     <div class="row">
@@ -20,64 +22,74 @@
 
         </div>
         -->
-        <div class="container">
+            <div class="container">
             <div class="row"> <!-- ik weet niet wat dit doet?!? -->
                 <div class="col-md-4">
-                    <!--Body content-->
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/500x50/EEE">
+                        <div class="caption" align="middle">
+                        <!--Body content-->
 
-                    <h2>First SetType</h2>
+                        <h2>First SetType</h2>
 
-                    <table class="sets">
-                        <tr>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Released</th>
-                        </tr>
-                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                            <td>{{set.code}}</td>
-                            <td>{{set.releaseDate}}</td>
-                        </tr>
-                    </table>
-
+                        <table class="sets">
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Released</th>
+                            </tr>
+                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                                <td>{{set.code}}</td>
+                                <td>{{set.releaseDate}}</td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <!--Body content-->
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/500x50/EEE">
+                        <div class="caption" align="middle">
+                        <!--Body content-->
 
-                    <h2>Second SetType</h2>
+                        <h2>Second SetType</h2>
 
-                    <table class="sets">
-                        <tr>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Released</th>
-                        </tr>
-                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                            <td>{{set.code}}</td>
-                            <td>{{set.releaseDate}}</td>
-                        </tr>
-                    </table>
-
+                        <table class="sets">
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Released</th>
+                            </tr>
+                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                                <td>{{set.code}}</td>
+                                <td>{{set.releaseDate}}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <!--Body content-->
+                    <div class="thumbnail">
+                        <img src="http://placehold.it/500x50/EEE">
+                        <div class="caption" align="middle">
+                        <!--Body content-->
 
-                    <h2>Third SetType</h2>
+                        <h2>Third SetType</h2>
 
-                    <table class="sets">
-                        <tr>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Released</th>
-                        </tr>
-                        <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                            <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                            <td>{{set.code}}</td>
-                            <td>{{set.releaseDate}}</td>
-                        </tr>
-                    </table>
-
+                        <table class="sets">
+                            <tr>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Released</th>
+                            </tr>
+                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                                <td>{{set.code}}</td>
+                                <td>{{set.releaseDate}}</td>
+                            </tr>
+                        </table>
+                    </div>>
                 </div>
             </div>
         </div>

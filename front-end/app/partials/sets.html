@@ -8,89 +8,37 @@
     </div>
 </div>
 
-    <div class="row">
-        <!--
-        <div class="col-md-2">
-            <!--Sidebar content
+<div class="row">
 
-            Search: <input ng-model="query">
-            Sort by:
-            <select ng-model="orderProp">
-                <option value="name">Name</option>
-                <option value="date">Date</option>
-            </select>
+    <div class="container">
 
-        </div>
-        -->
-            <div class="container">
-            <div class="row"> <!-- ik weet niet wat dit doet?!? -->
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/500x50/EEE">
-                        <div class="caption" align="middle">
-                        <!--Body content-->
+        <!-- <div class="row"> ik weet niet wat dit doet?!? -->
 
-                        <h2>First SetType</h2>
+            <div class="col-md-4">
 
-                        <table class="sets">
-                            <tr>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Released</th>
-                            </tr>
+                <h2>First SetType</h2>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Code</th>
+                            <th>Released</th>
+                        </tr>
+                            </thead>
+                            <tbody>
                             <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
                                 <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
                                 <td>{{set.code}}</td>
                                 <td>{{set.releaseDate}}</td>
                             </tr>
+                            </tbody>
                         </table>
-                        </div>
-                    </div>
+
                 </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/500x50/EEE">
-                        <div class="caption" align="middle">
-                        <!--Body content-->
 
-                        <h2>Second SetType</h2>
 
-                        <table class="sets">
-                            <tr>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Released</th>
-                            </tr>
-                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                                <td>{{set.code}}</td>
-                                <td>{{set.releaseDate}}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/500x50/EEE">
-                        <div class="caption" align="middle">
-                        <!--Body content-->
 
-                        <h2>Third SetType</h2>
-
-                        <table class="sets">
-                            <tr>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Released</th>
-                            </tr>
-                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                                <td>{{set.code}}</td>
-                                <td>{{set.releaseDate}}</td>
-                            </tr>
-                        </table>
-                    </div>>
-                </div>
             </div>
         </div>
     </div>

@@ -1,44 +1,148 @@
-<!-- Jumbotron - this should be less wide on desktop -->
-
 <div class="jumbotron">
+
     <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+
+        <h1>MTG Clever Title</h1>
+
+        <p>Come here for collecting, trading and play testing with your fellow magic enthousiast</p>
+
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+
     </div>
+
 </div>
 
-<div class="row">
+<div class="container">
 
-    <div class="container">
+    <div class="col-md-4">
 
-        <!-- <div class="row"> ik weet niet wat dit doet?!? -->
+        <h2>SetType</h2>
 
-            <div class="col-md-4">
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:10">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
 
-                <h2>First SetType</h2>
+        <h2>SetType</h2>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Code</th>
-                            <th>Released</th>
-                        </tr>
-                            </thead>
-                            <tbody>
-                            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
-                                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
-                                <td>{{set.code}}</td>
-                                <td>{{set.releaseDate}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
 
-                </div>
-
-
-
-            </div>
-        </div>
     </div>
+
+    <div class="col-md-4">
+
+        <h2>SetType</h2>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>SetType</h2>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>SetType</h2>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:5">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <h2>SetType</h2>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:10">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2>SetType</h2>
+
+        <table class="table table-condensed">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Released</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="set in sets | filter:query | orderBy:orderProp | limitTo:10">
+                <td><a href="#/sets/{{set.code}}">{{set.name}}</a></td>
+                <td>{{set.releaseDate}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
